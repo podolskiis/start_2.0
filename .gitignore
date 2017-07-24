@@ -5,3 +5,4 @@ app/css/
 build/
 dist/
 www/
+/**/*.DS_Store
