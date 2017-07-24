@@ -1,0 +1,44 @@
+// Grid Flex
+@mixin row-flex {
+  @include list-reset;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+// Grid Float
+@mixin row-float {
+  @include list-reset;
+  @include clearfix;
+  > * {
+    float: left;
+  }
+}
+
+// Grid Inline
+@mixin row-inline {
+  @include list-reset;
+  letter-spacing: -0.3em;
+  line-height: 1;
+  > * {
+    line-height: $tm_lh_d;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 1px;
+    letter-spacing: normal;
+  }
+}
+
+// Grid Table
+@mixin row-table {
+  $root: &;
+  @include list-reset;
+  &__list {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0;
+    > * {display: table-cell; vertical-align: middle;}
+    #{$root}_vertical_t > & > * {vertical-align: top;}
+    #{$root}_vertical_b > & > * {vertical-align: bottom;}
+  }
+}

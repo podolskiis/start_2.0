@@ -1,0 +1,20 @@
+
+// *** Центрирование блока (по высоте-ширине) в нутри другого *** //
+
+// @example: http://codepen.io/podolskiis/pen/wovVPx
+@mixin centered-inline-block {
+  text-align: center;
+  white-space: nowrap;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  & > * {
+    white-space: normal;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,19 @@
+@mixin tsn($speed: .15) {
+  transition:
+    box-shadow $speed+s,
+    background-color $speed+s,
+    border-color $speed+s,
+    color $speed+s
+}
+@mixin tsn-opc($speed: .15) {
+  transition: opacity $speed+s
+}
+@mixin tsn-all($speed: .15) {
+  transition: all $speed+s
+}
+@mixin tsn-off() {
+  transition: none !important
+}
+@mixin tsn-svg($val, $speed: .15) {
+  transition: $val $speed+s
+}

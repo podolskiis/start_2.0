@@ -1,0 +1,9 @@
+@mixin title-size($arr) {
+  $i: 1;
+  @each $size in $arr {
+    h#{$i}, .h#{$i} {
+      font-size: ems($size);
+    }
+    $i: $i+1;
+  }
+}

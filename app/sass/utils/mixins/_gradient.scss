@@ -1,0 +1,5 @@
+// linear-gradient
+@mixin l-gradient($t,$b) {
+  background-color: $b;
+  background-image: linear-gradient(to bottom, $t 0%,$b 100%);
+}

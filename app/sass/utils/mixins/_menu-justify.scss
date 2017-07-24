@@ -1,0 +1,22 @@
+@mixin menu-justify($lh:20px){
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+  height: $lh;
+  line-height: $lh;
+  > * {
+    line-height: $tm_lh_d;
+    display: inline;
+    a{
+      display: inline-block;
+    }
+  }
+  &:after {
+    content: ".";
+    margin-left: 100%;
+    display: inline-block;
+    height: 0;
+    overflow: hidden;
+  }
+}

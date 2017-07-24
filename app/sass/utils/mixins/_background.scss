@@ -1,0 +1,9 @@
+@mixin bg($img,$x:0,$y:0,$c:transparent,$r:no-repeat) {
+  background: url('#{$srcImg}#{$img}') $c $x $y $r
+}
+@mixin bg-i($img) {
+  background-image: url('#{$srcImg}#{$img}')
+}
+@mixin bg-d($img,$x:0,$y:0,$c:transparent,$r:no-repeat){
+  background: url('#{$srcImg}data:image/png;base64,#{$img}') $c $x $y $r
+}

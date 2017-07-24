@@ -1,0 +1,46 @@
+mixin breadcrumb(...items)
+  //- +breadcrumb('Главная','Категория','Страница')
+  ul.b-breadcrumb&attributes(attributes)
+    each item, i in items
+      li
+        if (i == items.length - 1)
+          span= item
+        else
+          a(href="#")= item
+mixin jsonMenu(data)
+  ul&attributes(attributes)
+    each item in data
+      li
+        a(href=item.url)
+          span=item.val
+mixin email(email,icon)
+  a(href="mailto:"+email, target="_blank", class!=attributes.class)
+    if icon
+      i(class=icon)
+      | 
+    | #{email}
+mixin imgRadius(attr)
+  span&attributes(attributes)
+    span
+      img(src=attr alt="")
+mixin navObj(obj)
+  ul&attributes(attributes)
+    each link, val in obj
+      li
+        a(href=link)= val
+mixin ulLink(...items)
+  ul&attributes(attributes)
+    each item in items
+      li
+        a(href="#")= item
+mixin ulLinkModifier(item, modifier, ...items)
+  ul(class= modifier)&attributes(attributes)
+    each val in items
+      if (item == 'span')
+        li(class= modifier+'__item')
+          span(class=modifier+'__val')!= val
+      else if (item == 'a')
+        li(class= modifier+'__item')
+          a(href="#" class= modifier+'__val')!= val
+      else
+        li(class='#{modifier}__item')!= val

@@ -1,0 +1,26 @@
+include ../vars/var-include
+include ../mixins/mix-include
+doctype html
+html(lang="ru")
+  head
+    include head
+  body.page(class=bodyClasses)
+    if header
+      // HEADER START 
+      include ../blocks/header
+      // HEADER END 
+    if main
+      // MAIN START 
+      main.s-main
+        block content
+      // MAIN END 
+    if footer
+      // FOOTER START 
+      include ../blocks/footer
+      // FOOTER END 
+    if modals
+      // MODALS START 
+      .hidden
+        include ../blocks/modals
+      // MODALS END 
+  include scripts

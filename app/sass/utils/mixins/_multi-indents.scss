@@ -1,0 +1,57 @@
+@mixin mi($task,$px,$arr) {
+  @each $size in $arr {
+    .#{$task + $size} {
+      @if $task == 'lh-' {
+        line-height: px-em($size,$px) !important;
+      }
+      @if $task == 'fz-' {
+        font-size: px-em($size,$px) !important;
+      }
+      @if $task == 'ht-' {
+        height: px-em($size,$px) !important;
+      }
+      @if $task == 'mg-t-' {
+        margin-top: px-em($size,$px) !important;
+      }
+      @if $task == 'mg-b-' {
+        margin-bottom: px-em($size,$px) !important;
+      }
+      @if $task == 'mg-tb-' {
+        margin-top: px-em($size,$px) !important;
+        margin-bottom: px-em($size,$px) !important;
+      }
+      @if $task == 'mg-lr-' {
+        margin-left: px-em($size,$px) !important;
+        margin-right: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-t-' {
+        padding-top: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-b-' {
+        padding-bottom: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-tb-' {
+        padding-top: px-em($size,$px) !important;
+        padding-bottom: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-l-' {
+        padding-left: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-r-' {
+        padding-right: px-em($size,$px) !important;
+      }
+      @if $task == 'pg-lr-' {
+        padding-left: px-em($size,$px) !important;
+        padding-right: px-em($size,$px) !important;
+      }
+    }
+    @if $task == 'list-items-mgt-' {
+      & >* {
+        margin-top: px-em($size,$px) !important;
+        &:first-child {
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+}

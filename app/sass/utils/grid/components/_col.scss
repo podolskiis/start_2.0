@@ -1,0 +1,14 @@
+.col {
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  max-width: 100%;
+  // padding: 1rem .5rem 0 .5rem;
+  padding-top: $grid-gutter;
+  padding-left: $grid-gutter/2;
+  padding-right: $grid-gutter/2;
+  padding-bottom: 0;
+
+  @include variant(no-gutters) {
+    padding: 0;
+  }
+}

@@ -1,0 +1,7 @@
+## Dir
+node_modules/
+app/bower/
+app/css/
+build/
+dist/
+www/

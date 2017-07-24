@@ -1,0 +1,43 @@
+extends template/base/main
+block var
+  - title           = ['О компании']
+  - bodyClasses     = ['sticky-footer']
+  - modals          = false
+  //- - header          = false
+  //- - footer          = false
+block content
+  .s-default
+    .grid.grid--container      
+      +breadcrumb('Главная','Категория','Статья')
+      
+      //- .row.row--xs-center.row--test
+        .col.col--xs-6
+          .row--test__item
+            | code
+        .col.col--xs-6
+          .row--test__item
+            | code
+      
+      h1
+        | Title
+      p
+        img(src="//lorempixel.com/400/200", width="400", height="200", alt="")
+      -for(var x = 0; x < 1; x++)
+        p
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.      
+      
+      form.form.form--default
+        .form__item
+          label.form__label
+            | Ваше имя
+          br
+          input(name="name" type="text" placeholder="Ваше имя" required)
+        .form__item
+          input(name="email" type="email" placeholder="Ваш e-mail" required)
+        .form__item
+          input.phone.phone_ru(name="phone" type="tel" placeholder="Ваш телефон" required)
+        .form__item
+          textarea( rows="5" name="msg" placeholder="Сообщение" required).w100p
+        .form__item.form__item--btn
+          button.btn.btn--default.lh-34(type="submit")
+            | submit

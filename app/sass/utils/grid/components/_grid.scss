@@ -1,0 +1,28 @@
+.grid {
+  box-sizing: border-box;
+  // padding: 0 .5rem;
+  padding: 0 $grid-gutter/2;
+
+  @include variant(container) {
+    margin: 0 auto;
+    width: 100%;
+    // max-width: 1200px;
+  }
+
+  // Container sizes
+  @each $breakpoint, $width in $breakpoints {
+    @if ($width > 0) {
+      @media (min-width: $width) {
+        @each $breakpoint-max-width, $max-width in $breakpoints-max-width {
+          @if ($breakpoint == $breakpoint-max-width) {
+            max-width: ($max-width + $grid-gutter); outline: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include variant(no-gutters) {
+    padding: 0;
+  }
+}
