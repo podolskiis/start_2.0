@@ -1,41 +1,41 @@
 // Helper for the grid align top
-@mixin make-row-helpers($breakpoint) {
-  .row--#{$breakpoint}-top {
+@mixin make-row-helpers($row, $breakpoint) {
+  #{$row}--#{$breakpoint}-top {
     align-items: flex-start;
   }
-  .row--#{$breakpoint}-center {
+  #{$row}--#{$breakpoint}-center {
     align-items: center;
   }
-  .row--#{$breakpoint}-bottom {
+  #{$row}--#{$breakpoint}-bottom {
     align-items: flex-end;
   }
 }
 
 // Helper for the sorting the first item
-@mixin make-col-helpers($breakpoint) {
-  .col--#{$breakpoint}-align-top {
+@mixin make-col-helpers($row, $col, $breakpoint) {
+  #{$col}--#{$breakpoint}-align-top {
     align-self: flex-start;
   }
-  .col--#{$breakpoint}-align-center {
+  #{$col}--#{$breakpoint}-align-center {
     align-self: center;
   }
-  .col--#{$breakpoint}-align-bottom {
+  #{$col}--#{$breakpoint}-align-bottom {
     align-self: flex-end;
   }
 
-  .col--#{$breakpoint}-first {
+  #{$col}--#{$breakpoint}-first {
     order: -1;
   }
-  .col--#{$breakpoint}-last {
+  #{$col}--#{$breakpoint}-last {
     order: 1;
   }
-  .col--#{$breakpoint}-reset {
+  #{$col}--#{$breakpoint}-reset {
     order: 0;
   }
-  .row--#{$breakpoint}-reverse {
+  #{$row}--#{$breakpoint}-reverse {
     flex-direction: row-reverse;
   }
-  .col--#{$breakpoint}-flex {
+  #{$col}--#{$breakpoint}-flex {
     display: flex;
   }
 }
@@ -53,31 +53,9 @@
   }
 }
 
-// Include all helpers
-@mixin make-helpers($breakpoint) {
-  @include make-row-helpers($breakpoint);
-  @include make-col-helpers($breakpoint);
-  @include make-text-helpers($breakpoint);
-}
 
-
-// *** ADD CUSTOM HELPERS ***
-
-// Helper for the sorting the "fit/fill"
-@mixin make-fill-helpers($breakpoint) {
-  .col--#{$breakpoint} {
-    &-fit {
-      flex: 0 1 auto !important;
-      flex-basis: auto !important;
-      max-width: none !important;
-    }
-    &-fill {
-      flex: 1 1 0% !important;
-      flex-basis: 0% !important;
-      max-width: none !important;
-    }
-  }
-}
+// ADD CUSTOM HELPERS
+//********************************************************/
 
 // Helper for the sorting the display "hide/show"
 [class*="show--"] {display: none !important;}
@@ -90,8 +68,16 @@
   }
 }
 
-// Include all helpers
+
+// INCLUDE ALL HELPERS
+//********************************************************/
+
 @mixin make-helpers($breakpoint) {
-  @include make-fill-helpers($breakpoint);
+  @include make-row-helpers('.row', $breakpoint);
+  @include make-col-helpers('.row', '.col', $breakpoint);
+  @include make-text-helpers($breakpoint);
+  // Custom helpers
+  @include make-row-helpers('.row-filling', $breakpoint);
+  @include make-col-helpers('.row-filling', '.col-filling', $breakpoint);
   @include make-visibility-helpers($breakpoint);
 }

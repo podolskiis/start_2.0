@@ -1,0 +1,54 @@
+@mixin make-filling-default() {
+  & {
+    &-fit {
+      width: auto;
+      flex-basis: auto;
+    }
+    &-fill {
+      width: auto;
+      flex: 1 1 0%;
+      flex-basis: 0%;
+    }
+  }
+}
+
+@mixin make-filling-offset($columns) {
+  @for $number from 1 through $columns {
+    &-offset-#{$number} {
+      margin-left: (100 / $columns * $number)#{'%'};
+    }
+  }
+}
+
+@mixin make-filling-column($columns ) {
+  @for $number from 1 through $columns {
+    &-#{$number} {
+      width: (100 / $columns * $number)#{'%'};
+      flex: none;
+    }
+  }
+  &-0 {
+    width: auto;
+  }
+}
+
+@mixin make-filling-grid-column($breakpoint, $columns) {
+  @include make-helpers($breakpoint);
+  .col-filling--#{$breakpoint} {
+    @include make-filling-default();
+    @include make-filling-column($columns);
+    @include make-filling-offset($columns);
+  }
+}
+
+@mixin init-filling($breakpoints, $columns) {
+  @each $breakpoint, $width in $breakpoints {
+    @if ($width == 0) {
+      @include make-filling-grid-column($breakpoint, $columns);
+    } @else {
+      @media (min-width: $width) {
+        @include make-filling-grid-column($breakpoint, $columns);
+      }
+    }
+  }
+}

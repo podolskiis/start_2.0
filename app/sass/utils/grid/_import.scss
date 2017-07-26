@@ -3,12 +3,16 @@
 // Mixins
 @import "mixins/helpers";
 @import "mixins/grid-framework";
+@import "mixins/filling-framework";
 @import "mixins/bem";
 
 // Components
-@import "components/col";
 @import "components/grid";
 @import "components/row";
+@import "components/col";
+@import "components/row-filling";
+@import "components/col-filling";
 @import "components/text";
 
 @include init($breakpoints, $columns);
+@include init-filling($breakpoints, $columns);

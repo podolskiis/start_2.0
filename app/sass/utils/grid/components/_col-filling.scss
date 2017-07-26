@@ -1,0 +1,11 @@
+[class*="col-filling"] {
+  width: 100%;
+  padding-top: $grid-gutter;
+  padding-left: $grid-gutter/2;
+  padding-right: $grid-gutter/2;
+  padding-bottom: 0;
+
+  @include variant(no-gutters) {
+    padding: 0;
+  }
+}

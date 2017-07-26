@@ -1,14 +1,14 @@
 header.s-header
   .grid.grid--container
-    .row
-      .col.col--sm.col--md-fit
+    .row-filling
+      .col-filling--sm-fit
         h2.b-logo
           a.b-logo__link(href="/")
             img.b-logo__img(src="images/theme/logo.png" alt="logo")
             span.b-logo__title.hide подпись к логотипу
-      .col.col--sm.col--md-fill
-      .col.col--sm.col--md-fit
-        ul
+      .col-filling--sm-fill.show--sm
+      .col-filling--sm-fit
+        ul.list-reset
           li
             a.b-phone(href="tel:+71234567890")
               span.b-phone__cod
