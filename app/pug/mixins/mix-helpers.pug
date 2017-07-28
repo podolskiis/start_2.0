@@ -1,0 +1,46 @@
+//- LIST
+mixin breadcrumb(items)
+  //- EXAMPLE: +breadcrumb(['Главная','Категория','Страница'])
+  ul.b-breadcrumb&attributes(attributes)
+    each item, index in items
+      li
+        if (index == items.length - 1)
+          span= item
+        else
+          a(href="#")= item
+mixin menu-data(data)
+  //- EXAMPLE: +data-menu(menu_main)
+  ul&attributes(attributes)
+    each item, index in data
+      li
+        a(href=item.url)
+          span=item.val
+mixin list-tag(itemTag, mod, items, active)
+  //- EXAMPLE: +list-tag('a', 'mod', ['item1','item2','item3'], 2)
+  - var curent = ' ' + mod + '__item--curent';
+  div(class= mod)&attributes(attributes)
+    ul(class= mod+'__list')
+      each val, index in items
+        li(class= mod+'__item' + (((index+1) === active) ? curent : '' ))
+          if (itemTag == 'span')
+            span(class=mod+'__val')!= val
+          else if (itemTag == 'a')
+            a(href="#" class= mod+'__val')!= val
+          else
+            | #{val}
+
+//- LINK
+mixin email(email,icon)
+  //- EXAMPLE: +email('email@google.com', 'icon-vk')
+  a(href="mailto:"+email, target="_blank", class!=attributes.class)
+    if icon
+      i(class=icon)
+      | 
+    | #{email}
+
+//- IMG
+mixin img-radius(src)
+  //- EXAMPLE: +img-radius('img/img.jpg')
+  span&attributes(attributes)
+    span
+      img(src=src alt="")

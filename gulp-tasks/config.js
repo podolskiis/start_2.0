@@ -13,9 +13,10 @@ module.exports = {
         rename:     'theme.css'
       },
       pug: {
-        src:        'app/pug/*.pug',
+        src:        'app/pug/pages/*.pug',
         dest:       'app/',
-        watch:      'app/pug/**/*.pug'
+        watch:      'app/pug/pages/*.pug',
+        json:       'app/pug/data.json'
       },
       bower: {
         src:        'app/pug/**/{head,scripts}.pug',

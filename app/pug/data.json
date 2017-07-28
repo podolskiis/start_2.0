@@ -1,5 +1,5 @@
--
-  var menu_main = [
+{
+  "menu_main": [
     {
       "val": "Главная",
       "url": "index.html"
@@ -33,3 +33,4 @@
       "url": "contacts.html"
     }
   ]
+}

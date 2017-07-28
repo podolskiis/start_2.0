@@ -1,4 +1,5 @@
 var
+  fs              = require('fs'),
   wiredep         = require('wiredep').stream,
   browserSync     = require('browser-sync'),
   reload          = browserSync.reload,
@@ -27,10 +28,14 @@ gulp.task('sass', function () {
 });
 
 // Pug
-gulp.task('pug', function buildHTML() {
+gulp.task('pug', function () {
+  var YOUR_LOCALS = config.path.app.pug.json;
   return gulp.src(config.path.app.pug.src)
     .pipe(plumber())
-    .pipe(pug({ pretty: true }))
+    .pipe(pug({
+      locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),
+      pretty: true
+    }))
     .pipe(gulp.dest(config.path.app.pug.dest))
     .pipe(reload({ stream: true }))
 });
