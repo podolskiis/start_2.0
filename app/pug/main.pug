@@ -1,13 +1,13 @@
-include ../vars
-include ../mixins/mix-include
+include vars
+include mixins/mix-include
 doctype html
 html(lang="ru")
   head
-    include head
+    include common/head
   body.page(class=bodyClasses)
     if header
       // HEADER START 
-      include ../common/header
+      include common/header
       // HEADER END 
     if main
       // MAIN START 
@@ -16,11 +16,11 @@ html(lang="ru")
       // MAIN END 
     if footer
       // FOOTER START 
-      include ../common/footer
+      include common/footer
       // FOOTER END 
     if modals
       // MODALS START 
       .hidden
-        include ../common/modals
+        include common/modals
       // MODALS END 
-  include scripts
+  include common/scripts

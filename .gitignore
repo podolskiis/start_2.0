@@ -1,6 +1,7 @@
 ## Dir
 node_modules/
 app/bower/
+app/bower_components/
 app/css/
 build/
 dist/
