@@ -1,0 +1,6 @@
+.col--max-height {
+  display: flex;
+  &__item {
+    flex-basis: 100%;
+  }
+}

@@ -1,32 +1,37 @@
-// Clearfix
+// CLEARFIX
 .clearfix           {@include clearfix;}
-// Text-align
+
+// TEXT-ALIGN
 .tal                {text-align: left !important}
 .tar                {text-align: right !important}
 .tac                {text-align: center !important}
 .taj                {text-align: justify !important}
 
-// Text-decoration
+// TEXT-DECORATION
 .tdu                {text-decoration: underline !important}
 .tdl                {text-decoration: line-through !important}
 .tdn                {text-decoration: none !important}
 .ttu                {text-transform: uppercase !important}
 
-// Float
+// FLOAT
 .fl                 {float: left !important}
 .fr                 {float: right !important}
 
-// List-style
+// LIST-STYLE
 .list-zero          {list-style-type: decimal-leading-zero}
 .list-square        {list-style-type: square}
 
-// Blocks show/hide
+// BLOCKS SHOW/HIDE
 .hide               {display: none}
 .show               {display: block}
 .hidden             {display: none !important}
 .text-hide          {@include hide-text;}
 
-// Other
+// RESET
+.list-reset         {@include list-reset}
+.table-reset        {@include table-reset}
+
+// OTHER
 .rzn                {resize: none !important}
 .w100p              {width: 100% !important}
 .nowrap             {white-space: nowrap !important}

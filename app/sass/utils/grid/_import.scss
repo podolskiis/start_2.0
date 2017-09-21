@@ -13,6 +13,7 @@
 @import "components/row-filling";
 @import "components/col-filling";
 @import "components/text";
+@import "components/col-max-heght";
 
 @include init($breakpoints, $columns);
 @include init-filling($breakpoints, $columns);

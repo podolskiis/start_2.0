@@ -1,21 +1,12 @@
-// PREVIEW THEME
 .s-header,
 .s-footer
   background: #9ACD32
 
-// TITLE
-.title--default
 
-// SLIDER
-.slider
-.slider--default
-
-// LIST
-.list-reset
-  @include list-reset
-
-
-// BLOCK
+.b-title
+.b-title--default
+.b-slider
+.b-slider--default
 .b-logo
   margin: 0
   display: inline-block
@@ -97,11 +88,9 @@
     font-weight: 700
 .b-footer-menu
   &__list
-    list-style-type: none
+    +list-reset
     margin: 0 -10px
-    padding: 0
-    display: flex
-    flex-flow: row wrap
+    +row-flex
     justify-content: center //space-between
   &__item
     position: relative
@@ -120,7 +109,6 @@
       background-color: #ddd
 
 
-// SECTION
 .s-default
   position: relative
   background: #fff
@@ -129,12 +117,10 @@
   padding: 20px 0
   a
     &:hover
-      //
 .s-footer
   padding: 20px 0
   a
     &:hover
-      //
   @at-root
     // FOOTER FIXED
     .sticky-footer
@@ -147,7 +133,6 @@
         flex: 1 0 auto
 
 
-// MODALL
 .modall
   a,button:focus:after
     outline: none
@@ -168,12 +153,3 @@
     &__title
       // @extend .title--default
 .modall--form
-
-
-.test
-  +row-flex
-  +row-gutter-top(5px)
-  flex-direction: column
-.row--test
-  &__item
-    background: #ccc

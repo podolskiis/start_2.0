@@ -52,7 +52,7 @@ gulp.task('files', function() {
 
 /* START BUILD
  ********************************************************/
- gulp.task('d', function(cb) {
+ gulp.task('b', function(cb) {
    gulpSequence(['sass', 'pug'], 'clean', ['img', 'useref', 'files'], cb);
  });
 

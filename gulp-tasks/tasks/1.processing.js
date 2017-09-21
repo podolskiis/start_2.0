@@ -8,6 +8,7 @@ var
   rename          = require("gulp-rename"),
   autoprefixer    = require('gulp-autoprefixer'),
   gcmq            = require('gulp-group-css-media-queries'),
+  cssbeautify     = require('gulp-cssbeautify'),
   pug             = require('gulp-pug'),
   plumber         = require('gulp-plumber'),
   config          = require('../config');
@@ -22,6 +23,7 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 25 versions'] }))
     .pipe(gcmq())
+    .pipe(cssbeautify({indent: '    '}))
     .pipe(rename(config.path.app.sass.rename))
     .pipe(gulp.dest(config.path.app.sass.dest))
     .pipe(reload({ stream: true }))
@@ -34,7 +36,8 @@ gulp.task('pug', function () {
     .pipe(plumber())
     .pipe(pug({
       locals: JSON.parse(fs.readFileSync(YOUR_LOCALS, 'utf-8')),
-      pretty: true
+      pretty: '    '
+      // pretty: true
     }))
     .pipe(gulp.dest(config.path.app.pug.dest))
     .pipe(reload({ stream: true }))

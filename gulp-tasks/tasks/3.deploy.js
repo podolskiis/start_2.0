@@ -15,7 +15,7 @@ gulp.task('f', function () {
    .pipe(conn.dest(config.ftp.url));
 });
 
-gulp.task('d:f', gulpSequence('d', 'f'));
+gulp.task('b:f', gulpSequence('b', 'f'));
 
 
 /* PROCESSING SYNC
@@ -26,4 +26,4 @@ gulp.task('s', function() {
     .pipe(rsync(config.ssh.host));
 });
 
-gulp.task('d:s', gulpSequence('d', 's'));
+gulp.task('b:s', gulpSequence('b', 's'));
