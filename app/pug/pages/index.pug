@@ -2,14 +2,14 @@ extends ../main
 block vars
   - title = ['О компании']
   - bodyClasses = ['sticky-footer']
-  //- - modals = true
-  //- - header = false
-  //- - footer = false
+  - header = true
+  - footer = true
+  - modals = true
 block content
   .s-default
     .grid.grid--container      
       +breadcrumb(['Главная','Категория','Статья','Статья2'])
-      
+
       .row.row--xs-center.row--test
         .col.col--xs-6
           .row--test__item
@@ -18,14 +18,14 @@ block content
           .row--test__item
             | code
       h1
-        | Title
+        | Title!
       
-      p
+      //- p
         img(src="//lorempixel.com/400/200", width="400", height="200", alt="").responsive-img
       -for(var x = 0; x < 1; x++)
         p
           | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.      
-      
+
       form.form.form--default
         .form__item
           label.form__label

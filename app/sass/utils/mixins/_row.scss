@@ -42,3 +42,16 @@
     #{$root}_vertical_b > & > * {vertical-align: bottom;}
   }
 }
+
+.row-flex {
+  @include row-flex;
+  &--nowrap {
+    flex-wrap: nowrap;
+  }
+  &--center-vertical {
+    justify-content: center;
+  }
+  &--center-gorizontal {
+    align-items: center;
+  }
+}

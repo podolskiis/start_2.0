@@ -17,11 +17,12 @@ head
   meta(name="description" content="")
   meta(name="keywords" content="")
 
-  <!-- build:css css/vendors.min.css -->
+  // build:css css/vendors.min.css 
+  = '\n'
   <!-- bower:css -->
   <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css" />
   <!-- endbower -->
-  <!-- endbuild -->
+  // endbuild 
 
   if icomoon
     +links("//i.icomoon.io/public/temp/"+icomoon+"/style.css")
@@ -29,7 +30,4 @@ head
   if modernizr
     +scripts("js/modernizr.js")
     
-  <!--[if lt IE 10]>
-  <link href="//rawgit.com/codefucker/finalReject/master/reject/reject.css" rel="stylesheet"/>
-  <script src="//rawgit.com/codefucker/finalReject/master/reject/reject.min.js"></script>
-  <![endif]-->
+  //[if lt IE 10]><link href="//rawgit.com/codefucker/finalReject/master/reject/reject.css" rel="stylesheet"/><script src="//rawgit.com/codefucker/finalReject/master/reject/reject.min.js"></script><![endif]

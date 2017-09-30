@@ -15,7 +15,7 @@ module.exports = {
       pug: {
         src:        'app/pug/pages/*.pug',
         dest:       'app/',
-        watch:      'app/pug/pages/*.pug',
+        watch:      'app/pug/**/*.pug',
         json:       'app/pug/data.json'
       },
       bower: {

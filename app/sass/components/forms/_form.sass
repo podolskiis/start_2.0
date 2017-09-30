@@ -1,0 +1,22 @@
+.form
+  #{$all-text-inputs}
+    outline: none
+    margin: 0
+    padding: 0
+    -webkit-appearance: none
+    box-shadow: none
+    border: none
+    border-radius: 0
+    font-family: $tm_ff_d
+    font-size: $tm_fz_d
+    line-height: $tm_lh_d
+    font-weight: $tm_fw_d
+    color: $tm_color_d
+  textarea
+    height: auto
+    line-height: $tm_lh_d
+    display: block
+  html.touch &
+    // Отключение автоматического Увеличение ввода - Safari на iPhone
+    #{$all-text-inputs}
+      font-size: 16px

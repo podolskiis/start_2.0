@@ -1,0 +1,11 @@
+input,textarea
+  @include placeholders
+    color: #aaa
+    opacity: 1
+  &:focus
+    @include placeholders
+      opacity: .5
+  &[class*="js-mask"]
+    &:hover, &:focus
+      @include placeholders
+        opacity: 0

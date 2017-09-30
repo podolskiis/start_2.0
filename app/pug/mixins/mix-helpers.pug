@@ -9,7 +9,7 @@ mixin breadcrumb(items)
         else
           a(href="#")= item
 mixin menu-data(data)
-  //- EXAMPLE: +data-menu(menu_main)
+  //- EXAMPLE: +menu-data(menu_main)
   ul&attributes(attributes)
     each item, index in data
       li
@@ -17,11 +17,11 @@ mixin menu-data(data)
           span=item.val
 mixin list-tag(itemTag, mod, items, active)
   //- EXAMPLE: +list-tag('a', 'mod', ['item1','item2','item3'], 2)
-  - var curent = ' ' + mod + '__item--curent';
+  - var current = ' ' + mod + '__item--current';
   div(class= mod)&attributes(attributes)
     ul(class= mod+'__list')
       each val, index in items
-        li(class= mod+'__item' + (((index+1) === active) ? curent : '' ))
+        li(class= mod+'__item' + (((index+1) === active) ? current : '' ))
           if (itemTag == 'span')
             span(class=mod+'__val')!= val
           else if (itemTag == 'a')

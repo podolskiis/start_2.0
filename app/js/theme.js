@@ -9,11 +9,6 @@ $(function(){
 
 
 
-
-
-
-
-
 // RESIZE
 $(window).on('resize', function() {
   // function...
