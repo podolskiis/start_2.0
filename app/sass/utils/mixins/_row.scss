@@ -1,7 +1,7 @@
 // Grid Flex
-@mixin row-flex {
+@mixin row-flex($block: flex) {
   @include list-reset;
-  display: flex;
+  display: $block;
   flex-flow: row wrap;
 }
 

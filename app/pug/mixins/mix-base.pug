@@ -9,7 +9,8 @@ mixin scripts(...files)
 //- CURRENT PAGE
 mixin pageTitle(tit)
   - activeMenu = tit
-  - title = tit[tit.length-1] // + ' | ' + tit[0]
+  - pojectName = (poject) ? ' | ' + poject : ''
+  - title = tit[tit.length-1] + pojectName
   each item in menu_main
     if (item.val == tit[0])
       - pageClass = item.url.slice(0,item.url.lastIndexOf('.'));

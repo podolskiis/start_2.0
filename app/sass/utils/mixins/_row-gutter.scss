@@ -20,3 +20,41 @@
     margin-top: $size;
   }
 }
+
+@mixin row-gutter-lines($size: $tm_gutter) {
+  > * {
+    margin-top: $size;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@mixin row-gutter-grid($gutter: $tm_gutter) {
+  $gutterLR: $gutter/2;
+  margin-top: -$gutter;
+  margin-left: -$gutterLR;
+  margin-right: -$gutterLR;
+  > * {
+    padding-top: $gutter;
+    padding-left: $gutterLR;
+    padding-right: $gutterLR;
+  }
+}
+
+@mixin row-gutter-grid-top($gutter: $tm_gutter) {
+  margin-top: -$gutter;
+  > * {
+    padding-top: $gutter;
+  }
+}
+
+@mixin row-gutter-grid-left($gutter: $tm_gutter) {
+  $gutterLR: $gutter/2;
+  margin-left: -$gutterLR;
+  margin-right: -$gutterLR;
+  > * {
+    padding-left: $gutterLR;
+    padding-right: $gutterLR;
+  }
+}
