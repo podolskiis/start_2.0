@@ -1,4 +1,6 @@
-// Grid breakpoints
+// Grid base breakpoints
+
+// breakpoints window
 $breakpoints: (
         xs : 0,
         sm : 576px,
@@ -7,17 +9,17 @@ $breakpoints: (
         xl : 1200px
 ) !default;
 
-// Container sizes
+// breakpoints content
 $breakpoints-max-width: (
         sm : 540px,
         md : 720px,
-        lg : 940px,
+        lg : 960px,
         xl : 1140px
 ) !default;
 
 // Number of columns
 $columns: 12 !default;
 
-// Gutter of columns
+// Grid base gutter of columns
 // 15px 0.9375rem | 16px 1rem | 20px 1.25rem | 30px 1.875rem | 40px 2.5rem
 $grid-gutter: 20px !default;
