@@ -1,0 +1,64 @@
+// FONT
+$tm_ff_d: 'Open Sans', sans-serif;
+$tm_fz_d: 14px;
+$tm_lh_d: 1.3;
+$tm_fw_d: 400;
+
+// FIXED WIDTH OF THE SITE | 980px | false
+$tm_fix_width_site: false;
+
+// BREAKPOINTS WINDOW
+$sm: 576px  !default;
+$md: 768px  !default;
+$lg: 992px  !default;
+$xl: 1200px !default;
+
+// MARGIN
+$tm_mg_p: 15px;
+$tm_gutter_grid: 30px;
+
+// COLOR-TEXT
+$tm_color_a: red;
+$tm_color_b: blue;
+$tm_color_c: #9ACD32;
+$tm_color_d: #333;
+// $tm_color_e: #;
+
+// LINK-COLOR
+$tm_color_link_a: #00c;
+$tm_color_link_b: #0cc;
+
+$bg-color: (
+  white       : #fff,
+  black       : #000,
+  gray        : #ccc,
+) !default;
+
+$text-color: (
+  white       : #fff,
+  black       : #000,
+  accent      : $tm_color_a,
+  link        : $tm_color_link_a,
+) !default;
+
+$arr_colors: ($bg-color, $text-color);
+
+// FORM ELEMENTS
+$tm_color_input_placeholder: #ddd;
+$tm_color_input_bg: #fff;
+$tm_color_input_border: #ddd;
+$tm_color_input_border_focus: #aaa;
+
+// TRANSITION
+$tm_tsn_fast: .15s;
+$tm_tsn_norm: .3s;
+$tm_tsn_slow: .5s;
+
+// SHADOW
+// $tm_shadow_1: ;
+// $tm_shadow_2: ;
+
+// WRAP
+$wrap: (
+  800, 710, 440, 300
+) !default;

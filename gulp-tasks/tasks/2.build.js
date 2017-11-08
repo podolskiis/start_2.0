@@ -42,6 +42,12 @@ gulp.task('useref', function () {
     .pipe(gulp.dest(config.dist.useref.dest));
 });
 
+gulp.task('minify-css', function() {
+  return gulp.src(config.dist.css.src)
+    .pipe(cleanCSS())
+    .pipe(gulp.dest(config.dist.css.dest));
+});
+
 // Import all files
 gulp.task('files', function() {
   var cat = config.dist.import;
@@ -53,7 +59,7 @@ gulp.task('files', function() {
 /* START BUILD
  ********************************************************/
  gulp.task('b', function(cb) {
-   gulpSequence(['sass', 'pug'], 'clean', ['img', 'useref', 'files'], cb);
+   gulpSequence(['sass', 'pug'], 'clean', ['img', 'useref', 'minify-css', 'files'], cb);
  });
 
  /* CLEAR ALL CACHE

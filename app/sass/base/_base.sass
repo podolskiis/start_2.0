@@ -1,10 +1,10 @@
-// BASIC PROJECT
+*,
+*:before, *:after
+  box-sizing: inherit
 html
   font-size: 100%
   overflow-y: scroll
   box-sizing: border-box
-*, *:before, *:after
-  box-sizing: inherit
 body
   margin: 0
   padding: 0
@@ -14,11 +14,6 @@ body
   font-weight: $tm_fw_d
   line-height: $tm_lh_d
   color: $tm_color_d
-
-  // PIXEL PERFECT
-  // @include bg('1.jpg',50%)
-  // opacity: .7
-
 html, body
   height: 100%
   @if $tm_fix_width_site
@@ -31,3 +26,15 @@ html, body
   @if $tm_fix_width_site
     width: ($tm_fix_width_site + $grid-gutter) !important
     max-width: none !important
+
+.page-wrap
+  overflow: hidden
+
+.sticky-footer
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  &__head, &__foot
+    flex-shrink: 0
+  &__main
+    flex: 1 0 auto

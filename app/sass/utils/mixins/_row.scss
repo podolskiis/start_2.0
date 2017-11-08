@@ -1,13 +1,17 @@
 // Grid Flex
 @mixin row-flex($block: flex) {
-  @include list-reset;
-  display: $block;
+  @include reset-list;
+  @if $block == inline {
+    display: inline-flex;
+  } @else {
+    display: $block;
+  }
   flex-flow: row wrap;
 }
 
 // Grid Float
 @mixin row-float {
-  @include list-reset;
+  @include reset-list;
   @include clearfix;
   > * {
     float: left;
@@ -16,7 +20,7 @@
 
 // Grid Inline
 @mixin row-inline {
-  @include list-reset;
+  @include reset-list;
   letter-spacing: -0.3em;
   line-height: 1;
   > * {
@@ -31,7 +35,7 @@
 // Grid Table
 @mixin row-table {
   $root: &;
-  @include list-reset;
+  @include reset-list;
   &__list {
     display: table;
     border-collapse: collapse;
@@ -40,18 +44,5 @@
     > * {display: table-cell; vertical-align: middle;}
     #{$root}_vertical_t > & > * {vertical-align: top;}
     #{$root}_vertical_b > & > * {vertical-align: bottom;}
-  }
-}
-
-.row-flex {
-  @include row-flex;
-  &--nowrap {
-    flex-wrap: nowrap;
-  }
-  &--center-vertical {
-    justify-content: center;
-  }
-  &--center-gorizontal {
-    align-items: center;
   }
 }

@@ -7,16 +7,13 @@
     box-shadow: none
     border: none
     border-radius: 0
+    vertical-align: top
     font-family: $tm_ff_d
-    font-size: $tm_fz_d
-    line-height: $tm_lh_d
     font-weight: $tm_fw_d
     color: $tm_color_d
+    font-size: 16px
   textarea
-    height: auto
-    line-height: $tm_lh_d
     display: block
-  html.touch &
-    // Отключение автоматического Увеличение ввода - Safari на iPhone
-    #{$all-text-inputs}
-      font-size: 16px
+  // Отключение автоматического Увеличение ввода - Safari на iPhone
+  select
+    font-size: 16px

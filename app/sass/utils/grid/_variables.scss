@@ -1,12 +1,13 @@
-// Grid base breakpoints
+// GRID BASE BREAKPOINTS
 
 // breakpoints window
+// переменные в главном vars.scss
 $breakpoints: (
         xs : 0,
-        sm : 576px,
-        md : 768px,
-        lg : 992px,
-        xl : 1200px
+        sm : $sm,
+        md : $md,
+        lg : $lg,
+        xl : $xl
 ) !default;
 
 // breakpoints content
@@ -22,4 +23,16 @@ $columns: 12 !default;
 
 // Grid base gutter of columns
 // 15px 0.9375rem | 16px 1rem | 20px 1.25rem | 30px 1.875rem | 40px 2.5rem
-$grid-gutter: 20px !default;
+$grid-gutter: $tm_gutter_grid !default;
+
+// MEDIA MIN
+$media-min-sm: 'min-width: #{$sm}' !default;
+$media-min-md: 'min-width: #{$md}' !default;
+$media-min-lg: 'min-width: #{$lg}' !default;
+$media-min-xl: 'min-width: #{$xl}' !default;
+
+// MEDIA MAX
+$media-max-sm: 'max-width: #{$sm - 1}' !default;
+$media-max-md: 'max-width: #{$md - 1}' !default;
+$media-max-lg: 'max-width: #{$lg - 1}' !default;
+$media-max-xl: 'max-width: #{$xl - 1}' !default;

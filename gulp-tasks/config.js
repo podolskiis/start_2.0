@@ -10,7 +10,7 @@ module.exports = {
         src:        'app/sass/main.scss',
         dest:       'app/css/',
         watch:      'app/sass/**/*.+(scss|sass)',
-        rename:     'theme.css'
+        rename:     'theme.min.css'
       },
       pug: {
         src:        'app/pug/pages/*.pug',
@@ -38,11 +38,11 @@ module.exports = {
       src:          'app/*.html',
       dest:         'www/'
     },
+    css: {
+      src:        'app/css/theme.min.css',
+      dest:       'www/css/'
+  	},
     import: {
-      css: {
-        src:        'app/css/*.css',
-        dest:       'www/css/'
-  	  },
       fonts: {
         src:        'app/fonts/**',
         dest:       'www/fonts/'

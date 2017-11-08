@@ -1,21 +1,11 @@
 // CLEARFIX
 .clearfix           {@include clearfix;}
 
-// TEXT-ALIGN
-.tal                {text-align: left !important}
-.tar                {text-align: right !important}
-.tac                {text-align: center !important}
-.taj                {text-align: justify !important}
-
 // TEXT-DECORATION
 .tdu                {text-decoration: underline !important}
 .tdl                {text-decoration: line-through !important}
 .tdn                {text-decoration: none !important}
 .ttu                {text-transform: uppercase !important}
-
-// FLOAT
-.fl                 {float: left !important}
-.fr                 {float: right !important}
 
 // LIST-STYLE
 .list-zero          {list-style-type: decimal-leading-zero}
@@ -28,12 +18,33 @@
 .text-hide          {@include hide-text;}
 
 // RESET
-.list-reset         {@include list-reset}
-.table-reset        {@include table-reset}
+.reset-list         {@include reset-list}
+.reset-table        {@include reset-table}
 
 // OTHER
 .rzn                {resize: none !important}
 .w100p              {width: 100% !important}
 .nowrap             {white-space: nowrap !important}
 .dib                {display: inline-block !important; vertical-align: middle}
-.btn .dib           {vertical-align: middle}
+
+// RESPONSIVE
+.responsive-img     {@include responsive-img}
+.responsive-video   {@include responsive-video}
+.responsive-table   {@include responsive-table}
+
+// FULL-SCREEN
+.full-screen-vertical {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  &__fit {flex-shrink: 0;}
+  &__fill {flex: 1 0 auto;}
+}
+
+// example: .wrap.wrap--w700
+@include wrap($wrap);
+
+// example: .bg-color--white/.text-color--white
+@each $var in $arr_colors {
+  @include colors($var);
+}

@@ -2,6 +2,10 @@
 .s-footer
   background: #9ACD32
 
+// PIXEL PERFECT
+  body
+    @include bg('1.jpg',50%)
+    opacity: .7
 
 .b-title
 .b-title--default
@@ -66,7 +70,7 @@
 .b-breadcrumb
   +row-flex
   +row-gutter-top(5px)
-  margin: 0 0 $tm_gutter
+  margin: 0 0 15px
   > *::before
     content: '|'
     margin: 0 10px
@@ -88,7 +92,7 @@
     font-weight: 700
 .b-footer-menu
   &__list
-    +list-reset
+    +reset-list
     margin: 0 -10px
     +row-flex
     justify-content: center //space-between
@@ -121,27 +125,15 @@
   padding: 20px 0
   a
     &:hover
-  @at-root
-    // FOOTER FIXED
-    .sticky-footer
-      display: flex
-      flex-direction: column
-      height: 100vh
-      > *
-        flex-shrink: 0
-      > .s-main
-        flex: 1 0 auto
 
 
 .modall
   a,button:focus:after
     outline: none
-.modall--animation
-  opacity: 0
+  // .modall--animation
   transform: translateY(-50px)
   transition: all .3s
-  .fancybox-slide--complete &
-    opacity: 1
+  .fancybox-slide--current &
     transform: translateY(0)
 .modall--default
   background: #fff

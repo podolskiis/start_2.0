@@ -1,6 +1,7 @@
 @import 'clearfix';
-@import 'list-reset';
-@import 'table-reset';
+@import 'reset-list';
+@import 'reset-table';
+@import 'reset-in-mg';
 @import 'triangle';
 @import 'transition';
 @import 'background';
@@ -16,7 +17,6 @@
 @import 'title-size';
 @import 'menu-justify';
 @import 'multi-indents';
-@import 'reset-in-mg';
 @import 'hide-text';
 @import 'responsive-img';
 @import 'responsive-video';
@@ -24,3 +24,5 @@
 @import 'centered-in-block';
 @import 'row';
 @import 'row-gutter';
+@import 'wrap';
+@import 'colors';

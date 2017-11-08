@@ -1,6 +1,6 @@
 //- LIST
 mixin breadcrumb(items)
-  //- EXAMPLE: +breadcrumb(['Главная','Категория','Страница'])
+  //- EXAMPLE: +b-breadcrumb(['Главная','Категория','Страница'])
   ul.b-breadcrumb&attributes(attributes)
     each item, index in items
       li
@@ -9,14 +9,14 @@ mixin breadcrumb(items)
         else
           a(href="#")= item
 mixin menu-data(data)
-  //- EXAMPLE: +menu-data(menu_main)
+  //- EXAMPLE: +b-menu-data(menu_main)
   ul&attributes(attributes)
     each item, index in data
       li
         a(href=item.url)
           span=item.val
 mixin list-tag(itemTag, mod, items, active)
-  //- EXAMPLE: +list-tag('a', 'mod', ['item1','item2','item3'], 2)
+  //- EXAMPLE: +b-list-tag('a', 'mod', ['item1','item2','item3'], 2)
   - var current = ' ' + mod + '__item--current';
   div(class= mod)&attributes(attributes)
     ul(class= mod+'__list')
@@ -31,7 +31,7 @@ mixin list-tag(itemTag, mod, items, active)
 
 //- LINK
 mixin email(email,icon)
-  //- EXAMPLE: +email('email@google.com', 'icon-vk')
+  //- EXAMPLE: +b-email('email@google.com', 'icon-vk')
   a(href="mailto:"+email, target="_blank", class!=attributes.class)
     if icon
       i(class=icon)
@@ -40,7 +40,7 @@ mixin email(email,icon)
 
 //- IMG
 mixin img-radius(src)
-  //- EXAMPLE: +img-radius('img/img.jpg')
+  //- EXAMPLE: +b-img-radius('img/img.jpg')
   span&attributes(attributes)
     span
       img(src=src alt="")

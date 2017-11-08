@@ -11,12 +11,13 @@
     border-width: $inputBdWt+px
     border-style: solid
     // EDIT
-    background: #fff
-    border-color: #ddd
+    background: $tm_color_input_bg
+    border-color: $tm_color_input_border
     &:focus
-      border-color: #aaa
+      border-color: $tm_color_input_border_focus
   textarea
-    min-height: ems(100)
+    height: auto
+    min-height: 100px
   .form
     &__label
       display: inline-block

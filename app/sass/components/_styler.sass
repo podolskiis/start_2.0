@@ -1,14 +1,19 @@
-.b-styler
-  select
-    border: 0
-    width: 100%
+.jq-selectbox
+  max-width: 100%
+select.b-styler
+  border: 0
+  width: 100%
+  visibility: hidden
+  .jq-selectbox &
+    visibility: visible
 .b-styler--default
   .jq-selectbox
     &__select
       cursor: pointer
       position: relative
-      border: 1px solid $tm_border_color
-      color: $tm_color_placeholder
+      background-color: $tm_color_input_bg
+      border: 1px solid $tm_color_input_border
+      color: $tm_color_input_placeholder
       padding: 0 30px 0 15px
       line-height: 30px
     &__trigger-arrow
@@ -27,7 +32,7 @@
       margin-top: 3px
       top: auto !important
       ul
-        +list-reset
+        +reset-list
         +row-gutter-lines(5px)
         padding: 10px 0
         li
