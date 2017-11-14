@@ -1,5 +1,39 @@
+//- MENU
+mixin b-multiMenu(data, navСlass, dropdown)
+  //- EXAMPLE: +b-multiMenu(menu_obj, 'class-menu','submenu')
+  mixin multiSubmenu(data, navСlass, count)
+    - count++
+    ul(class=navСlass+'-submenu')
+      each item in data
+        li(class=navСlass+'-submenu__item', class={active: activeMenu[count] === item.val})
+          a(href=item.url, class=navСlass+'-submenu__link')
+            span= item.val
+          if (item.submenu)
+            div(class=navСlass+'__submenu')
+              +multiSubmenu(item.submenu, navСlass, count)
+  nav(class=navСlass)&attributes(attributes)
+    ul(class=navСlass+'__list')
+      - var count = 0
+      each item in data
+        - var itemClasses = [navСlass+'__item']
+        if (item.submenu && dropdown)
+          - itemClasses.push(itemClasses[0] + '_dropdown')
+        li( class=itemClasses, class={active: activeMenu[count] === item.val} )
+          a(href=item.url, class=navСlass+'__link')
+            span= item.val
+          if (item.submenu && dropdown)
+            div(class=navСlass+'__submenu')
+              +multiSubmenu(item.submenu, navСlass, count)
+mixin b-menu-data(data)
+  //- EXAMPLE: +b-menu-data(menu_main)
+  ul&attributes(attributes)
+    each item, index in data
+      li
+        a(href=item.url)
+          span=item.val
+
 //- LIST
-mixin breadcrumb(items)
+mixin b-breadcrumb(items)
   //- EXAMPLE: +b-breadcrumb(['Главная','Категория','Страница'])
   ul.b-breadcrumb&attributes(attributes)
     each item, index in items
@@ -8,29 +42,21 @@ mixin breadcrumb(items)
           span= item
         else
           a(href="#")= item
-mixin menu-data(data)
-  //- EXAMPLE: +b-menu-data(menu_main)
-  ul&attributes(attributes)
-    each item, index in data
-      li
-        a(href=item.url)
-          span=item.val
-mixin list-tag(itemTag, mod, items, active)
-  //- EXAMPLE: +b-list-tag('a', 'mod', ['item1','item2','item3'], 2)
-  - var current = ' ' + mod + '__item--current';
+mixin b-list(itemTag, mod, items, active)
+  //- EXAMPLE: +b-list('a', 'mod', ['item1','item2','item3'], 2)
   div(class= mod)&attributes(attributes)
     ul(class= mod+'__list')
       each val, index in items
-        li(class= mod+'__item' + (((index+1) === active) ? current : '' ))
+        li(class= mod+'__item' class={active: (index+1) === active})
           if (itemTag == 'span')
             span(class=mod+'__val')!= val
           else if (itemTag == 'a')
             a(href="#" class= mod+'__val')!= val
           else
-            | #{val}
+            != val
 
 //- LINK
-mixin email(email,icon)
+mixin b-email(email,icon)
   //- EXAMPLE: +b-email('email@google.com', 'icon-vk')
   a(href="mailto:"+email, target="_blank", class!=attributes.class)
     if icon
@@ -39,7 +65,7 @@ mixin email(email,icon)
     | #{email}
 
 //- IMG
-mixin img-radius(src)
+mixin b-img-radius(src)
   //- EXAMPLE: +b-img-radius('img/img.jpg')
   span&attributes(attributes)
     span

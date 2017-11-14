@@ -44,7 +44,13 @@
 // example: .wrap.wrap--w700
 @include wrap($wrap);
 
-// example: .bg-color--white/.text-color--white
-@each $var in $arr_colors {
+// example: .bg-white/.text-white
+@each $var in $array-colors {
   @include colors($var);
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
 }

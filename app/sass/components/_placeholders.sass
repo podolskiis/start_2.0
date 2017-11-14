@@ -1,11 +1,10 @@
-input,textarea
+input, textarea
   @include placeholders
-    color: $tm_color_input_placeholder
-    opacity: 1
+    color: $placeholder_color
   &:focus
     @include placeholders
-      opacity: .5
-  &[class*="js-mask"]
+      color: $placeholder_focus_color
+  // &[class*="js-mask"]
     &:hover, &:focus
       @include placeholders
         opacity: 0

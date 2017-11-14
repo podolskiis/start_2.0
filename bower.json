@@ -4,5 +4,19 @@
   "dependencies": {
     "jquery": "latest",
     "normalize-css": "latest"
+  },
+  "overrides": {
+    "fancybox": {
+      "main": [
+        "dist/jquery.fancybox.css",
+        "dist/jquery.fancybox.js"
+      ]
+    },
+    "jquery.form-styler": {
+      "main": [
+        "dist/jquery.formstyler.css",
+        "dist/jquery.formstyler.js"
+      ]
+    }
   }
 }

@@ -3,15 +3,20 @@ block vars
   - title = ['О компании']
   - header = true
   - footer = true
+  - offstage = true
   - modals = true
 block content
-  .s-default
-    .grid.grid--container      
-      +breadcrumb(['Главная','Категория','Статья','Статья2'])
-      h1
-        | Title!
-      //- p
-        img(src="//lorempixel.com/400/200", width="400", height="200", alt="").responsive-img
-      -for(var x = 0; x < 1; x++)
-        p
-          | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.      
+  .s-base
+    .grid.grid--container
+      .row
+        .col
+          +b-breadcrumb(['Главная','Категория','Статья','Статья2'])
+        .col
+          h1
+            | Title!
+        .col
+          //- p
+            img(src="//lorempixel.com/400/200", width="400", height="200", alt="").responsive-img
+          - for (var x = 1; x <= 1; x++)
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

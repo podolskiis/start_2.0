@@ -12,15 +12,23 @@ var // GLOBAL VARIABLES
 
 
 
-// RESIZE
-$(window).on('resize', function() {
-  // function...
-}); $(window).trigger('resize');
 
-// LOAD
-$(window).on('load', function() {
-  // function...
-  $(window).trigger('resize');
-});
+
+
+
+
+
+
+
+
+
+
+// NAME
+(function(){
+  var
+    $element = $('element');
+  // $element.
+}());
+
 
 }); // END READY

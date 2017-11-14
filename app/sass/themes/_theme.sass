@@ -1,16 +1,8 @@
-.s-header,
-.s-footer
+.s-header, .s-footer
   background: #9ACD32
 
-// PIXEL PERFECT
-  body
-    @include bg('1.jpg',50%)
-    opacity: .7
-
-.b-title
-.b-title--default
-.b-slider
-.b-slider--default
+.b-title-main
+.b-title-section
 .b-logo
   margin: 0
   display: inline-block
@@ -18,32 +10,28 @@
   vertical-align: top
   &__link
     text-decoration: none
-    color: $tm_color_d
+    color: $fc_base
     display: block
     &:hover
       text-decoration: none
       color: inherit
 .b-main-menu
-  $rootParent: &
-  $navHt: 38px
+  $root: &
   ul
-    @extend .clearfix
-    list-style: none
+    +reset-list
   &__list
-    margin: 0
-    padding: 0
+    +row-flex
   &__item
     position: relative
-    float: left
   &__link
-    color: $tm_color_d
-    line-height: $navHt
-    text-decoration: none !important
+    text-decoration: none
     display: block
     background: #ddd
+    color: $fc_base
+    line-height: 38px
     padding: 0 15px
     &:hover,
-    #{$rootParent}__item.active &
+    #{$root}__item.active &
       color: #fff
       background: #999
   &__submenu
@@ -51,17 +39,17 @@
     position: absolute
     z-index: 99
     width: 220px
-    #{$rootParent}__item:hover > &,
-    #{$rootParent}-submenu__item:hover > &
+    #{$root}__item:hover > &,
+    #{$root}-submenu__item:hover > &
       display: block
-    #{$rootParent}__submenu &
+    #{$root}__submenu &
       top: 0
       left: 100%
   &-submenu
     margin: 0
     padding: 10px 0
     background: #ddd
-    box-shadow: 1px 1px 3px rgba(#000,.3)
+    box-shadow: $box_shadow_base
     &__item
       position: relative
     &__link
@@ -71,74 +59,32 @@
   +row-flex
   +row-gutter-top(5px)
   margin: 0 0 15px
-  > *::before
-    content: '|'
-    margin: 0 10px
-  > *:first-child::before
+  >
+    *::before
+      content: '|'
+      margin: 0 10px
+    *:first-child::before
+      display: none
+  @media ($media-max-md)
     display: none
-.b-panel
-  background: #9ACD32
-  padding: 15px
-  margin-bottom: 15px
-  &__title
-    margin-top: 0
 .b-phone
-  text-decoration: none !important
-  color: $tm_color_d
+  text-decoration: none
+  color: $fc_base
   white-space: nowrap
   &__cod
     color: #fff
   &__num
     font-weight: 700
-.b-footer-menu
-  &__list
-    +reset-list
-    margin: 0 -10px
-    +row-flex
-    justify-content: center //space-between
-  &__item
-    position: relative
-    margin: 0 10px
-  &__link
-    display: block
-.b-copyright
-.b-developer
-.b-table-responsive-default
-  overflow-x: auto
-  &::-webkit-scrollbar
-    +z(5px)
-  &::-webkit-scrollbar-track
-      background-color: #eee
-  &::-webkit-scrollbar-thumb
-      background-color: #ddd
 
 
-.s-default
+.s-base
   position: relative
-  background: #fff
-  padding: 50px 0
+  padding: 30px 0
+  @media ($media-min-md)
+    padding: 50px 0
 .s-header
-  padding: 20px 0
   a
     &:hover
 .s-footer
-  padding: 20px 0
   a
     &:hover
-
-
-.modall
-  a,button:focus:after
-    outline: none
-  // .modall--animation
-  transform: translateY(-50px)
-  transition: all .3s
-  .fancybox-slide--current &
-    transform: translateY(0)
-.modall--default
-  background: #fff
-  padding: 40px 50px
-  max-width: 700px
-  @media (max-width: 479px)
-    padding: 20px
-.modall--form

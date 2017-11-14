@@ -1,62 +1,55 @@
 // FONT
-$tm_ff_d: 'Open Sans', sans-serif;
-$tm_fz_d: 14px;
-$tm_lh_d: 1.3;
-$tm_fw_d: 400;
-
-// FIXED WIDTH OF THE SITE | 980px | false
-$tm_fix_width_site: false;
-
-// BREAKPOINTS WINDOW
-$sm: 576px  !default;
-$md: 768px  !default;
-$lg: 992px  !default;
-$xl: 1200px !default;
+$ff_base: sans-serif;
+$fz_base: 16px;
+$fw_base: 400;
+$lh_base: 1.3;
+$fc_base: #333;
 
 // MARGIN
-$tm_mg_p: 15px;
-$tm_gutter_grid: 30px;
-
-// COLOR-TEXT
-$tm_color_a: red;
-$tm_color_b: blue;
-$tm_color_c: #9ACD32;
-$tm_color_d: #333;
-// $tm_color_e: #;
+$gutter_base:   30px;
+$gutter_p_base: 15px;
 
 // LINK-COLOR
-$tm_color_link_a: #00c;
-$tm_color_link_b: #0cc;
+$link_color_base:       #0275d8;
+$link_hover_color_base: darken($link_color_base, 15%);
+
+// HELPERS COLOR
+$color_1: #c00;
+$color_2: #9ACD32;
 
 $bg-color: (
-  white       : #fff,
-  black       : #000,
-  gray        : #ccc,
+  white:        #fff,
+  black:        #000,
+  gray:         #ccc,
 ) !default;
-
 $text-color: (
-  white       : #fff,
-  black       : #000,
-  accent      : $tm_color_a,
-  link        : $tm_color_link_a,
+  white:        #fff,
+  black:        #000,
+  accent:       $color_1,
+  link:         $link_color_base,
 ) !default;
-
-$arr_colors: ($bg-color, $text-color);
-
-// FORM ELEMENTS
-$tm_color_input_placeholder: #ddd;
-$tm_color_input_bg: #fff;
-$tm_color_input_border: #ddd;
-$tm_color_input_border_focus: #aaa;
+$array-colors: ($bg-color, $text-color);
 
 // TRANSITION
-$tm_tsn_fast: .15s;
-$tm_tsn_norm: .3s;
-$tm_tsn_slow: .5s;
+$tsn_duration_base: .2s;
+$tsn_duration_mid:  .3s;
+$tsn_duration_slow: .5s;
 
-// SHADOW
-// $tm_shadow_1: ;
-// $tm_shadow_2: ;
+$box_shadow_base: 1px 1px 5px rgba(#000, .3);
+$border_radius_base: 3px;
+
+// FORM ELEMENTS
+$placeholder_color:        #aaa;
+$placeholder_focus_color:  #ddd;
+$input_bg:                 #fff;
+$input_border_color:       #ddd;
+$input_border_focus_color: #aaa;
+
+$input_height:             36px;
+$input_padding_x:          10px;
+$input_padding_y:          5px;
+$input_border_width:       1px;
+$form_group_gutter: $gutter_p_base;
 
 // WRAP
 $wrap: (

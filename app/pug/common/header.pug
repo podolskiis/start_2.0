@@ -1,4 +1,4 @@
-header.s-header
+header.s-header.s-base
   .grid.grid--container
     .row-filling
       .col-filling--sm-fit
@@ -14,7 +14,11 @@ header.s-header
               span.b-phone__num
                 | 456-78-90
           li
-            +email('email@dom.ru','icon-email').b-email
+            +b-email('email@dom.ru','icon-email').b-email
     .row
       .col
-        +multiMenu(menu_main,'b-main-menu','submenu')
+        .show--md
+          +b-multiMenu(menu_main,'b-main-menu','submenu')
+        .hide--md.text--right
+          button(data-bars="btn" aria-hidden="true").btn
+            | ☰

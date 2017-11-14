@@ -5,26 +5,25 @@ html(lang="ru")
   head
     include common/head
   body.page(class=bodyClasses)
-    .page-wrap.sticky-footer
-      .sticky-footer__head
-        if header
-          // HEADER START 
-          include common/header
-          // HEADER END 
-      .sticky-footer__main
-        if main
-          // MAIN START 
-          main.s-main
-            block content
-          // MAIN END 
-      .sticky-footer__foot
-        if footer
-          // FOOTER START 
-          include common/footer
-          // FOOTER END 
+    .page-wrap
+      if header
+        // HEADER START 
+        include common/header
+        // HEADER END 
+      if main
+        // MAIN START 
+        main.s-main
+          block content
+        // MAIN END 
+      if footer
+        // FOOTER START 
+        include common/footer
+        // FOOTER END 
+    if offstage
+      include common/offstage
     if modals
       // MODALS START 
-      .hidden
+      .modals-wrap.hidden
         include common/modals
       // MODALS END 
     include common/scripts

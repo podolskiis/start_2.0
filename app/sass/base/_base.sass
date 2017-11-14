@@ -1,40 +1,41 @@
-*,
-*:before, *:after
-  box-sizing: inherit
+*, *:before, *:after
+  box-sizing: border-box
 html
   font-size: 100%
-  overflow-y: scroll
-  box-sizing: border-box
 body
   margin: 0
   padding: 0
   background: #fff
-  font-family: $tm_ff_d
-  font-size: em($tm_fz_d)
-  font-weight: $tm_fw_d
-  line-height: $tm_lh_d
-  color: $tm_color_d
+  font-family: $ff_base
+  font-size: $fz_base
+  font-weight: $fw_base
+  line-height: $lh_base
+  color: $fc_base
+
 html, body
-  height: 100%
-  @if $tm_fix_width_site
-    min-width: ($tm_fix_width_site + $grid-gutter)
+  @if $fix_width_site
+    min-width: ($fix_width_site + $grid-gutter)
   // @else
     min-width: 300px
 
 .grid
   @include clearfix
-  @if $tm_fix_width_site
-    width: ($tm_fix_width_site + $grid-gutter) !important
+  @if $fix_width_site
+    width: ($fix_width_site + $grid-gutter) !important
     max-width: none !important
+  // &--container
+    @media (max-width: 479px)
+      padding: 0 10px
 
 .page-wrap
   overflow: hidden
-
-.sticky-footer
   display: flex
-  flex-direction: column
   min-height: 100vh
-  &__head, &__foot
-    flex-shrink: 0
-  &__main
+  flex-direction: column
+  > main
     flex: 1 0 auto
+
+// PIXEL PERFECT
+  body
+    @include bg('1.jpg',50%)
+    opacity: .7

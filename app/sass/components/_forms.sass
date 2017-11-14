@@ -1,0 +1,46 @@
+.form
+  $root: &
+  #{$root}__field
+    outline: none
+    margin: 0
+    padding: 0
+    -webkit-appearance: none
+    box-shadow: none
+    border: none
+    border-radius: 0
+    vertical-align: top
+    font-family: $ff_base
+    font-weight: $fw_base
+    color: $fc_base
+    font-size: 16px
+  textarea#{$root}__field
+    display: block
+  select#{$root}__field
+    font-size: 16px
+  @at-root
+    #{&}--default
+      #{$root}__field
+        +form-field
+      textarea#{$root}__field
+        height: auto
+        min-height: 100px
+      #{$root}__label
+        display: block
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+        margin-bottom: 5px
+        &:last-child
+          margin-bottom: 0
+      #{$root}__group
+        margin-top: $form_group_gutter
+        &:first-child
+          margin-top: 0
+        &--btn
+          margin-top: $form_group_gutter*2
+      // VALIDATE
+        input.error,textarea.error
+          border-color: red !important
+          box-shadow: 0 0 px(3) red !important
+        label.error
+          display: none !important

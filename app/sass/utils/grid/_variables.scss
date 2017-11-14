@@ -1,7 +1,15 @@
 // GRID BASE BREAKPOINTS
 
+// fixed width of the site | 980px | false
+$fix_width_site: false !default;
+
 // breakpoints window
-// переменные в главном vars.scss
+$sm: 576px ;
+$md: 768px ;
+$lg: 992px ;
+$xl: 1200px;
+
+// переменные значения, находятся в главном vars.scss
 $breakpoints: (
         xs : 0,
         sm : $sm,
@@ -23,7 +31,7 @@ $columns: 12 !default;
 
 // Grid base gutter of columns
 // 15px 0.9375rem | 16px 1rem | 20px 1.25rem | 30px 1.875rem | 40px 2.5rem
-$grid-gutter: $tm_gutter_grid !default;
+$grid-gutter: $gutter_base !default;
 
 // MEDIA MIN
 $media-min-sm: 'min-width: #{$sm}' !default;

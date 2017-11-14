@@ -1,19 +1,19 @@
-@mixin tsn($speed: $tm_tsn_norm) {
+@mixin tsn($speed: $tsn_duration_base) {
   transition:
     box-shadow $speed,
     background-color $speed,
     border-color $speed,
     color $speed
 }
-@mixin tsn-opc($speed: $tm_tsn_norm) {
+@mixin tsn-opc($speed: $tsn_duration_base) {
   transition: opacity $speed
 }
-@mixin tsn-all($speed: $tm_tsn_norm) {
+@mixin tsn-all($speed: $tsn_duration_base) {
   transition: all $speed
 }
 @mixin tsn-off() {
   transition: none !important
 }
-@mixin tsn-svg($val, $speed: $tm_tsn_norm) {
+@mixin tsn-svg($val, $speed: $tsn_duration_base) {
   transition: $val $speed
 }

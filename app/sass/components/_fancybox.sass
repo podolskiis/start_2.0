@@ -1,19 +1,30 @@
+// THEME STYLE
+.modall
+  a,button:focus:after
+    outline: none
+  // .modall--animation
+  transform: translateY(-50px)
+  transition: all .3s
+  .fancybox-slide--current &
+    transform: translateY(0)
+.modall--default
+  background: #fff
+  padding: 40px 50px
+  max-width: 700px
+  @media (max-width: 479px)
+    padding: 20px
+.modall--form
+
+
+// EDIT AUTOR STYLE
 [data-src],
+[data-modall],
 [data-fancybox]
   outline: none
 .fancybox-bg
   background: #000
   .fancybox-is-open &
     opacity: .75
-  // .fancybox-container--ready &
-    opacity: .9
-// .fancybox-close-small
-  $rott: &
-  &:after
-    font-weight: 700
-    color: $tm_color_a
-  &:hover:after
-    color: $tm_color_a
 
 // http://take.ms/qpEEb
 .fancybox-thumbs

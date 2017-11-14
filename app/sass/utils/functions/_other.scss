@@ -1,5 +1,5 @@
 // Convert pixels to em
-@function ems($pxval, $base: $tm_fz_d) {
+@function ems($pxval, $base: $fz_base) {
   @if not unitless($pxval) {
     $pxval: strip-units($pxval);
   }

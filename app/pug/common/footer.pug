@@ -1,12 +1,10 @@
-footer.s-footer
+footer.s-footer.s-base
   .grid.grid--container
     .row-filling.row-filling--xs-center
-      .col-filling--md-fit
-        .b-copyright.text--xs-center
-          | © 2015 Copyright
       .col-filling--md-fill
-        +multiMenu(menu_main,'b-footer-menu')
+        .b-copyright.text--md-left.text--center
+          | © 2015 Copyright
       .col-filling--md-fit
-        .b-developer.text--xs-center
+        .b-developer.text--md-left.text--center
           | Разработка сайта: 
           a(href="//studio.ru" target="_blank") studio.ru

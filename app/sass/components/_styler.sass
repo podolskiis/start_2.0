@@ -1,56 +1,65 @@
-.jq-selectbox
-  max-width: 100%
 select.b-styler
   border: 0
   width: 100%
-  visibility: hidden
-  .jq-selectbox &
+  // visibility: hidden
+  // .jq-selectbox &
     visibility: visible
-.b-styler--default
-  .jq-selectbox
-    &__select
-      cursor: pointer
-      position: relative
-      background-color: $tm_color_input_bg
-      border: 1px solid $tm_color_input_border
-      color: $tm_color_input_placeholder
-      padding: 0 30px 0 15px
-      line-height: 30px
-    &__trigger-arrow
-      +triangle(8px, $tm_border_color, down)
-      position: absolute
-      display: block
-      right: 15px
-      top: 50%
-      transform: translateY(-50%)
-      margin-top: 1px
-      +tsn-opc
-    &__dropdown
-      min-width: 100%
-      background: #fff
-      box-shadow: 1px 1px 5px rgba(0, 0, 0, .3)
-      margin-top: 3px
-      top: auto !important
-      ul
-        +reset-list
-        +row-gutter-lines(5px)
-        padding: 10px 0
-        li
-          padding: 0 15px
-          cursor: pointer
-  &.focused
-    .jq-selectbox
-  &.opened
-    .jq-selectbox
-  &.changed
-    .jq-selectbox
-      &__select
-        color: $tm_color_d
-  &.w100p
-    display: block
-    .jq-selectbox
-      &__dropdown
-        max-width: 100%
-        li
-          white-space: normal
-          line-height: 1.1
+.b-styler
+  $root: &
+  &.jq-selectbox
+    max-width: 100%
+  @at-root
+    #{&}--default
+      .jq-selectbox
+        &__select
+          +form-field
+          position: relative
+          color: $placeholder_color
+          padding-right: $input_padding_x*3
+          font-size: 16px
+        &__select-text
+          min-width: 100.1%
+        &__trigger-arrow
+          +triangle(8px, $input_border_color, down)
+          position: absolute
+          display: block
+          right: $input_padding_x
+          top: 50%
+          transform: translateY(-50%)
+          margin-top: 1px
+          +tsn-opc
+        &__dropdown
+          top: auto !important
+          min-width: 100%
+          background: #fff
+          box-shadow: $box_shadow_1
+          margin-top: 3px
+          ul
+            +reset-list
+            padding: 10px 0
+            li
+              line-height: 1.2
+              padding: $input_padding_y $input_padding_x
+              cursor: pointer
+              font-size: 16px
+      &.focused
+        .jq-selectbox
+      &.opened
+        .jq-selectbox
+          &__trigger-arrow
+            border-top-color: $fc_base
+            transform: rotate(180deg)
+            margin-top: -2px
+      &.changed
+        .jq-selectbox
+          &__select
+            color: $fc_base
+          &__trigger-arrow
+            border-top-color: $fc_base
+      &.w100p
+        display: block
+        .jq-selectbox
+          &__dropdown
+            max-width: 100%
+            li
+              white-space: normal

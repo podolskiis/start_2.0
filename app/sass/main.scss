@@ -3,11 +3,13 @@
 @import 'utils/import';
 
 @import 'base/fonts';
-@import 'base/base';
 @import 'base/typography';
+@import 'base/base';
 
 @import 'components/buttons';
-@import 'components/forms/import';
-@import 'components/fancybox';
+// @import 'components/placeholders';
+// @import 'components/forms';
+// @import 'components/styler';
+// @import 'components/fancybox';
 
 @import 'themes/theme';

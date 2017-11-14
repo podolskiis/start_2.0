@@ -1,38 +1,39 @@
 .btn
-  background-color: transparent
-  outline: none
-  padding: 0
-  border: 0
-  text-align: center
-  display: inline-block
-  position: relative
-  white-space: nowrap
-  cursor: pointer
-  text-decoration: none !important
-  box-sizing: inherit
-  vertical-align: middle
-  font-weight: $tm_fw_d
-  font-family: $tm_ff_d
-  color: $tm_color_d
-  &:hover
-    text-decoration: none
-  & input
-    background: none
-    border: 0
-    padding: 0
-    position: absolute
-    top: 0
-    right: 0
-    left: 0
-    bottom: 0
-    width: 100%
-    height: 100%
-    opacity: 0
-  // BUTTON GROUP
-  &--default
-    background: blue
-    padding: 0 15px
-    font-family: $tm_ff_d
+  $root: &
+  +btn
+  +btn-group($root)
+  &--base
+    border: 1px solid transparent
+    font-family: $ff_base
+    border-radius: 3px
+    font-size: $fz_base
+    padding: 0 1rem
+    +btn-size(36px)
+  // SIZES
+  &--lg
+    font-size: 20px
+    padding: 0 1.5rem
+    +btn-size(50px)
+  &--sm
+    font-size: 14px
+    padding: 0 .5rem
+    +btn-size(26px)
+  // COLOR
+  &--primary
+    background: $link_color_base
     color: #fff
     &:hover
-      background: #0cc
+      background: $link_hover_color_base
+  // OUTLINE
+  &--outline-primary
+    border-color: $link_color_base
+    color: $link_color_base
+    &:hover
+      background: $link_color_base
+      color: #fff
+  // LINK
+  &--link
+    color: $link_color_base
+    &:hover
+      color: $link_hover_color_base
+      text-decoration: underline
