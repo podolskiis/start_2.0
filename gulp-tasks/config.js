@@ -43,6 +43,10 @@ module.exports = {
       dest:       'www/css/'
   	},
     import: {
+      css: {
+        src:        'app/css/theme.edit.css',
+        dest:       'www/css/'
+    	},
       fonts: {
         src:        'app/fonts/**',
         dest:       'www/fonts/'
