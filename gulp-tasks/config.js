@@ -13,13 +13,13 @@ module.exports = {
         rename:     'theme.min.css'
       },
       pug: {
-        src:        'app/pug/pages/*.pug',
+        src:        'app/pug/**/*.pug',
         dest:       'app/',
         watch:      'app/pug/**/*.pug',
-        json:       'app/pug/data.json'
+        json:       'app/pug/_base/_data.json'
       },
       bower: {
-        src:        'app/pug/**/{head,scripts}.pug',
+        src:        'app/pug/**/{_head,_script}.pug',
         dest:       'app/pug/',
         watch:      'bower.json'
       },

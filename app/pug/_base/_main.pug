@@ -1,14 +1,16 @@
 doctype html
-include vars
-include mixins/mix-include
+include _vars.pug
+include ../_mixins/_mix-include.pug
 html(lang="ru")
   head
-    include common/head
+    include _head.pug
   body.page(class=bodyClasses)
+    if off-top
+      include ../_section/_off-top.pug
     .page-wrap
       if header
         // HEADER START 
-        include common/header
+        include ../_section/_s-header.pug
         // HEADER END 
       if main
         // MAIN START 
@@ -17,13 +19,11 @@ html(lang="ru")
         // MAIN END 
       if footer
         // FOOTER START 
-        include common/footer
+        include ../_section/_s-footer.pug
         // FOOTER END 
-    if offstage
-      include common/offstage
-    if modals
+    if off-bot
       // MODALS START 
       .modals-wrap.hidden
-        include common/modals
+        include ../_section/_off-bot.pug
       // MODALS END 
-    include common/scripts
+    include _script.pug

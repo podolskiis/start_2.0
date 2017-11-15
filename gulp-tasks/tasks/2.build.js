@@ -12,6 +12,7 @@ var
   gulpSequence    = require('gulp-sequence'),
   config          = require('../config');
 
+
 /* PROCESSING
 ********************************************************/
 
@@ -19,6 +20,7 @@ var
 gulp.task('clean', function() {
 	return del.sync(config.dist.home);
 });
+
 
 // Import and compress (img)
 gulp.task('img', function() {
@@ -32,6 +34,7 @@ gulp.task('img', function() {
 		.pipe(gulp.dest(config.dist.img.dest));
 });
 
+
 // Import and compress (css, js)
 gulp.task('useref', function () {
   return gulp.src(config.dist.useref.src)
@@ -42,11 +45,13 @@ gulp.task('useref', function () {
     .pipe(gulp.dest(config.dist.useref.dest));
 });
 
+
 gulp.task('minify-css', function() {
   return gulp.src(config.dist.css.src)
     .pipe(cleanCSS())
     .pipe(gulp.dest(config.dist.css.dest));
 });
+
 
 // Import all files
 gulp.task('files', function() {
@@ -55,6 +60,7 @@ gulp.task('files', function() {
     gulp.src(cat[url].src).pipe(gulp.dest(cat[url].dest));
   }
 });
+
 
 /* START BUILD
  ********************************************************/
