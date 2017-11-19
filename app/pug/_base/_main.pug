@@ -5,7 +5,7 @@ html(lang="ru")
   head
     include _head.pug
   body.page(class=bodyClasses)
-    if off-top
+    if off_top
       include ../_section/_off-top.pug
     .page-wrap
       if header
@@ -21,7 +21,7 @@ html(lang="ru")
         // FOOTER START 
         include ../_section/_s-footer.pug
         // FOOTER END 
-    if off-bot
+    if off_bot
       // MODALS START 
       .modals-wrap.hidden
         include ../_section/_off-bot.pug

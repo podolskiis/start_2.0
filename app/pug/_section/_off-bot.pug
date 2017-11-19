@@ -1,11 +1,25 @@
-#id.modall
-  .modall__head
+#id_1.modall.modall--form
+  .modall__content
     h3.modall__title
       | title
-  .modall__body
+    form.form.form--default
+      .form__group
+        input(type="text" name="name" placeholder="Ваше имя" required).form__field
+      .form__group
+        input(type="email" name="email" placeholder="Ваш e-mail" required).form__field
+      .form__group
+        input(type="tel" name="phone" placeholder="Ваш телефон" required).form__field
+      .form__group
+        textarea(rows="5" name="msg" placeholder="Сообщение" required).form__field.w100p
+      .form__group.form__group--btn
+        button(type="submit").btn.btn--default
+          | submit
+          
+#id_2.modall.modall--text
+  .modall__content
+    h3.modall__title
+      | title
     p
       | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cum voluptates sed commodi maxime quidem magnam, non assumenda inventore in nemo, dolore, voluptas quam. Itaque quos dolorem architecto deserunt, adipisci!
     p
       | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis cum voluptates sed commodi maxime quidem magnam, non assumenda inventore in nemo, dolore, voluptas quam. Itaque quos dolorem architecto deserunt, adipisci!
-  .modall__foot
-    | content

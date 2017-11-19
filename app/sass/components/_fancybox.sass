@@ -1,21 +1,3 @@
-// THEME STYLE
-.modall
-  a,button:focus:after
-    outline: none
-  // .modall--animation
-  transform: translateY(-50px)
-  transition: all .3s
-  .fancybox-slide--current &
-    transform: translateY(0)
-.modall--default
-  background: #fff
-  padding: 40px 50px
-  max-width: 700px
-  @media (max-width: 479px)
-    padding: 20px
-.modall--form
-
-
 // EDIT AUTOR STYLE
 [data-src],
 [data-modall],
@@ -25,9 +7,52 @@
   background: #000
   .fancybox-is-open &
     opacity: .75
-
 // http://take.ms/qpEEb
 .fancybox-thumbs
   background: #373636
   > ul > li
     width: 50%
+
+
+// THEME STYLE
+.modall
+  $root: &
+  a,button:focus:after
+    outline: none
+  .fancybox-slide &
+    background: none
+    padding: 0
+    margin: 0
+    width: 100%
+    @media($max-sm)
+      padding: 30px 15px
+  #{$root}__cancel
+    position: absolute
+    top: 15px
+    right: 15px
+    opacity: .5
+    &:hover
+      opacity: 1
+  #{$root}__content
+    +reset-in-mg
+  // MODALL--ANIMATION
+  transform: translateY(-50px)
+  transition: all .3s
+  .fancybox-slide--current &
+    transform: translateY(0)
+  @at-root
+    #{&}--text
+      // MODALL--TEXT
+      .fancybox-slide &
+        background: #fff
+        max-width: 800px
+        padding: 60px
+        @media($max-md)
+          padding: 30px
+    #{&}--form
+      // MODALL--FORM
+      .fancybox-slide &
+        background: #fff
+        @media($min-sm)
+          max-width: 600px
+          padding: 60px

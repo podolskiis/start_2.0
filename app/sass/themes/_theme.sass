@@ -1,8 +1,12 @@
+// PIXEL PERFECT
+  body
+    @include bg('1.jpg',50%)
+    opacity: .7
 .s-header, .s-footer
   background: #9ACD32
 
-.b-title-main
-.b-title-section
+
+.b-title
 .b-logo
   margin: 0
   display: inline-block
@@ -65,7 +69,7 @@
       margin: 0 10px
     *:first-child::before
       display: none
-  @media ($media-max-md)
+  @media($max-md)
     display: none
 .b-phone
   text-decoration: none
@@ -80,7 +84,7 @@
 .s-base
   position: relative
   padding: 30px 0
-  @media ($media-min-md)
+  @media($min-md)
     padding: 50px 0
 .s-header
   a

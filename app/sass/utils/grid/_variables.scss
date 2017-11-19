@@ -34,13 +34,13 @@ $columns: 12 !default;
 $grid-gutter: $gutter_base !default;
 
 // MEDIA MIN
-$media-min-sm: 'min-width: #{$sm}' !default;
-$media-min-md: 'min-width: #{$md}' !default;
-$media-min-lg: 'min-width: #{$lg}' !default;
-$media-min-xl: 'min-width: #{$xl}' !default;
+$min-sm: 'min-width: #{$sm}' !default;
+$min-md: 'min-width: #{$md}' !default;
+$min-lg: 'min-width: #{$lg}' !default;
+$min-xl: 'min-width: #{$xl}' !default;
 
 // MEDIA MAX
-$media-max-sm: 'max-width: #{$sm - 1}' !default;
-$media-max-md: 'max-width: #{$md - 1}' !default;
-$media-max-lg: 'max-width: #{$lg - 1}' !default;
-$media-max-xl: 'max-width: #{$xl - 1}' !default;
+$max-sm: 'max-width: #{$sm - 1}' !default;
+$max-md: 'max-width: #{$md - 1}' !default;
+$max-lg: 'max-width: #{$lg - 1}' !default;
+$max-xl: 'max-width: #{$xl - 1}' !default;

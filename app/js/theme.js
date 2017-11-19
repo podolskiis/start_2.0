@@ -1,8 +1,8 @@
 $(function(){
 
 var // GLOBAL VARIABLES
-  var1 = true,
-  var2 = false;
+  // $gObj = $(''),
+  $gHtml = $('html');
 
 
 
@@ -26,8 +26,16 @@ var // GLOBAL VARIABLES
 // NAME
 (function(){
   var
-    $element = $('element');
+    $element = $('.element');
   // $element.
+}());
+
+
+// WINDOW-LOAD
+(function(){
+  $(window).on('load', function() {
+    $gHtml.addClass('is-ready');
+  }); $(window).trigger('load');
 }());
 
 
