@@ -1,9 +1,10 @@
-mixin ltIE
+mixin ltIE-12
   // [if lt IE 12 ] 
   script.
     var userAgent=navigator.userAgent.toLowerCase(),isIE=userAgent.indexOf('msie')!=-1?parseInt(userAgent.split('msie')[1]):userAgent.indexOf('trident')!=-1?11:userAgent.indexOf('edge')!=-1?12:false;if(isIE){(isIE<12)?window.location="//outdatedbrowser.com/":false;}
   // [endif lt IE 12 ] 
-  //- [if lt IE 10]><link href="//rawgit.com/codefucker/finalReject/master/reject/reject.css" rel="stylesheet"/><script src="//rawgit.com/codefucker/finalReject/master/reject/reject.min.js"></script><![endif]
+mixin ltIE-10
+  //[if lt IE 10]><link href="//rawgit.com/codefucker/finalReject/master/reject/reject.css" rel="stylesheet"/><script src="//rawgit.com/codefucker/finalReject/master/reject/reject.min.js"></script><![endif]
 
 mixin favicon
   if favicon

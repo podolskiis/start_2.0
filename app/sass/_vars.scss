@@ -1,5 +1,5 @@
 // FONT
-$ff_base: sans-serif;
+$ff_base: 'Roboto', sans-serif;
 $fz_base: 16px;
 $fw_base: 400;
 $lh_base: 1.3;
@@ -9,13 +9,12 @@ $fc_base: #333;
 $gutter_base:   30px;
 $gutter_p_base: 15px;
 
-// LINK-COLOR
-$link_color_base:       #0275d8;
-$link_hover_color_base: darken($link_color_base, 15%);
-
-// HELPERS COLOR
+// COLOR
 $color_1: #c00;
 $color_2: #9ACD32;
+
+$link_color_base:       #0275d8;
+$link_hover_color_base: darken($link_color_base, 15%);
 
 $bg-color: (
   white:        #fff,

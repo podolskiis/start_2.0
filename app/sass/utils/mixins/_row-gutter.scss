@@ -1,4 +1,4 @@
-@mixin row-gutter($size: $tm_gutter) {
+@mixin row-gutter($size: $gutter_base) {
   margin-top: -$size;
   margin-left: -$size;
   > * {
@@ -7,21 +7,21 @@
   }
 }
 
-@mixin row-gutter-left($size: $tm_gutter) {
+@mixin row-gutter-left($size: $gutter_base) {
   margin-left: -$size;
   > * {
     margin-left: $size;
   }
 }
 
-@mixin row-gutter-top($size: $tm_gutter) {
+@mixin row-gutter-top($size: $gutter_base) {
   margin-top: -$size;
   > * {
     margin-top: $size;
   }
 }
 
-@mixin row-gutter-lines($size: $tm_gutter) {
+@mixin row-gutter-lines($size: $gutter_base) {
   > * {
     margin-top: $size;
     &:first-child {
@@ -30,7 +30,7 @@
   }
 }
 
-@mixin row-gutter-grid($gutter: $tm_gutter) {
+@mixin row-gutter-grid($gutter: $gutter_base) {
   $gutterLR: $gutter/2;
   margin-top: -$gutter;
   margin-left: -$gutterLR;
@@ -42,14 +42,14 @@
   }
 }
 
-@mixin row-gutter-grid-top($gutter: $tm_gutter) {
+@mixin row-gutter-grid-top($gutter: $gutter_base) {
   margin-top: -$gutter;
   > * {
     padding-top: $gutter;
   }
 }
 
-@mixin row-gutter-grid-left($gutter: $tm_gutter) {
+@mixin row-gutter-grid-left($gutter: $gutter_base) {
   $gutterLR: $gutter/2;
   margin-left: -$gutterLR;
   margin-right: -$gutterLR;
