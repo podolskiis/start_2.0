@@ -33,5 +33,6 @@ mixin pageTitle(tit)
     each item in menu_main
       if (item.val == tit[0])
         - pageClass = item.url.slice(0,item.url.lastIndexOf('.'));
-        - bodyClasses.splice(0, 0, ['page--'+pageClass]);
+        //- Автом. генерация классов, на модификатор страницы
+          - bodyClasses.splice(0, 0, ['page--'+pageClass]);
 +pageTitle(title)
